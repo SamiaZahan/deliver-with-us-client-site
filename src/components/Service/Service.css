@@ -1,0 +1,41 @@
+.service{
+    display: flex;
+    margin: 20px;
+    padding: 15px;
+    border: 1 px solid gray;
+    border-radius: 5px;
+    background-image: linear-gradient(rgb(243, 226, 130), rgb(236, 236, 236));
+
+}
+.service-name{
+  
+    font-weight: 400;
+   
+}
+.service img{
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+}
+.detail{
+    padding-left: 15px;
+}
+.btn-regular{
+    background-color: goldenrod;
+    width: 100%;
+    height: 25px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.icon-color{
+    color: gold;
+}
+
+@media only screen and (max-width:688px) {
+    .service img{
+        width: 150px;
+        height: 100%;
+        border-radius: 5px;
+    }
+}

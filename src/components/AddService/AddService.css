@@ -1,0 +1,23 @@
+.add-service{
+    width: 50%;
+    margin: auto;
+}
+.add-service h2{
+    padding-top: 10% ;
+}
+.add-form{
+    display: flex;
+    flex-direction: column; 
+}
+
+.add-service form input, textarea{
+    margin: 15px 0;
+    padding: 5px;
+}
+
+@media only screen and (max-width:688px) {
+    .add-service h2{
+        padding-top: 70% ;
+    }
+}
+

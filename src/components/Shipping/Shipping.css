@@ -1,5 +1,25 @@
+.shipping{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    margin: auto;
+  
+}
+.order-service{
+    margin: 20% 10%;
+    background-image: linear-gradient(rgb(243, 226, 130), rgb(236, 236, 236));
+    padding: 0 10%;
+    border-radius: 5px;
+}
+.order-service img{
+    width: 100%;
+    border-radius: 5px;
+}
+.order-service p{
+    text-align: left;
+}
 .shipping-form{
-    margin:30px 150px;
+    margin: 15% 10%;
 }
 .shipping-form input {
     display: block;
@@ -7,8 +27,21 @@
     padding: 5px;
     border: 1px solid gray;
     border-radius: 5px;
-    width: 300px;
+    width: 75%;
 }
 .error{
     color: red;
+}
+
+
+@media only screen and (max-width:688px) {
+    .shipping{
+        grid-template-columns: 1fr;
+    }
+    .order-service{
+        margin: 50% 10% 20%;
+    }
+    .shipping-form{
+        margin: 0 10% 50%;
+    }
 }

@@ -1,0 +1,93 @@
+.Banner img{
+    margin-top: 40px;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.service-container{
+    margin: 50px 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2%;
+    border-right: 1px solid lightgray;
+    
+}
+
+.top h2{
+    text-align: center;
+}
+.top-text h2{
+    width: 50%;
+    padding: 20px 50px;
+    border-radius: 5px ;
+    margin: auto;
+    background-image: linear-gradient(rgb(243, 226, 130), rgb(236, 236, 236));
+    text-align: center;
+}
+.about-text{
+    width: 50%;
+    margin: auto;
+    box-shadow: 2px 2px 4px 4px rgb(243, 226, 130);
+    padding: 30px;
+    border-radius: 5px;
+}
+.about-text p{
+    width: 50%;
+    margin: auto;
+}
+.card-container{
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    margin: auto;
+}
+
+.card{
+    margin: 20px 20px;
+    box-shadow: 2px 2px 4px 4px rgb(243, 226, 130);
+    border-radius: 5px;
+    padding: 20px 0;
+    text-align: center;
+
+}
+.address h3, p{
+    text-align: center;
+}
+
+.message{
+    width: 50%;
+    margin: auto;
+}
+.message input{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 4px 4px rgb(243, 226, 130);
+}
+.message button{
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 4px rgb(243, 226, 130);
+    border: none;
+}
+
+/* Make it responsive */
+@media only screen and (max-width:688px) {
+    .shop-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (max-width:688px) {
+    .service-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .cart-container{
+        padding: 15px;
+    }
+}

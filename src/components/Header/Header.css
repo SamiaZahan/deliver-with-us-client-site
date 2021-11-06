@@ -1,5 +1,12 @@
+.nav{
+    display: flex;
+    
+}
 .header{
     text-align: center;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 100px;
 }
 .logo{
     height: 50px;

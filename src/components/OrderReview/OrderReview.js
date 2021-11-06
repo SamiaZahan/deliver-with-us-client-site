@@ -1,45 +1,57 @@
 import React from 'react';
-import useProducts from '../../hooks/useProducts';
-import useCart from '../../hooks/useCart';
-import Cart from '../Cart/Cart';
-import ReviewItem from '../ReviewItem/ReviewItem';
-import { clearTheCart, removeFromDb } from '../../utilities/fakedb';
-import { useHistory } from 'react-router';
+import  { useEffect, useState } from 'react';
+import Order from '../Order/Order';
+import useAuth from '../../hooks/useAuth';
+import './OrderReview.css';
 
 const OrderReview = () => {
-    const [products] = useProducts();
-    const [cart, setCart] = useCart(products);
-    const history = useHistory();
+    const { user } = useAuth();
+    const [orders, setOrders] = useState([]);
 
-    const handleRemove = key => {
-        const newCart = cart.filter(product => product.key !== key);
-        setCart(newCart);
-        removeFromDb(key);
-    }
+    useEffect(() => {
+        fetch('https://vast-spire-92659.herokuapp.com/orders')
+            .then(res => res.json())
+            .then(data => {
+                const filtered = data.filter(obj=>obj.email===user.email)
+                setOrders(filtered);      
+            });
+    }, []);
 
-    const handleProceedToShipping = () => {
-        // setCart([]);
-        // clearTheCart();
-        history.push('/shipping');
-    }
 
-    return (
-        <div className="shop-container">
-            <div className="product-container">
-                {
-                    cart.map(product => <ReviewItem
-                        key={product.key}
-                        product={product}
-                        handleRemove={handleRemove}
-                    ></ReviewItem>)
+    const handleDelete = id => {
+        const proceed = window.confirm('Want to Delete?');
+        if(proceed){
+            const url = `https://vast-spire-92659.herokuapp.com/orders/${id}`;
+            fetch(url,{
+                method: 'DELETE'    
+            })
+            .then(res=> res.json())
+            .then(data=>{
+                if(data.deletedCount){
+                    alert('Successfully Deleted');
+                    const remaining= orders.filter(order => order._id !== id)
+                    setOrders(remaining);    
                 }
-            </div>
-            <div className="cart-container">
-                <Cart cart={cart}>
-                    <button onClick={handleProceedToShipping} className="btn-regular">Proceed to Shipping</button>
-                </Cart>
-            </div>
-        </div>
+                
+            });
+        }
+    }
+    const handleStatus = id => {};
+ 
+    return (
+        <div className="orders-container">
+        {
+            orders.map(order => <Order
+                key={order._id}
+                order={order}
+                handleDelete={handleDelete}
+                handleStatus={handleStatus}
+                
+               
+            >
+            </Order>)
+        }
+    </div>
     );
 };
 

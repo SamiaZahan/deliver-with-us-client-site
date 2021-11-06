@@ -1,0 +1,11 @@
+.order{
+    padding:2% 2%;
+    background-image: linear-gradient(rgb(243, 226, 130), rgb(236, 236, 236));
+    margin: 10px;
+    border-radius: 5px ;
+
+}
+.Client{
+    text-align: center;
+}
+

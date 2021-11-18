@@ -1,5 +1,5 @@
 App name: Deliver With US
-LIVE LINK: https://delicery-service.web.app/
+
 
 Functionalities:
     * A home Page with header, banner, 6 offerings 
